@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+  <title>База студентов</title>
+</head>
+
+<body>
+  <div class="block_input_form">
+    <form class="needs-validation" novalidate>
+      <div class="form-group form-block">
+        <label for="validationCustom01">Фамилия</label>
+        <input required type="text" id="validationCustom01" class="form-control surName" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="validationCustom02">Собственное имя</label>
+        <input required type="text" id="validationCustom02" class="form-control name" aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="validationCustom03">Отчество</label>
+        <input required type="text" id="validationCustom03" class="form-control patronymic"
+          aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="validationCustom04">Факультет</label>
+        <input required type="text" id="validationCustom04" class="form-control faculty">
+      </div>
+      <div class="form-group">
+        <label for="validationCustom05">Дата рождения</label>
+        <input required type="date" id="validationCustom05" class="form-control birthday" min="01.01.1900">
+      </div>
+      <div class="form-group">
+        <label for="validationCustom06">Дата поступления</label>
+        <input required type="date" id="validationCustom06" class="form-control training" min="01.01.2000">
+      </div>
+      <button type="submit" class="btn btn-primary">отправить данные</button>
+    </form>
+
+    <div class="search">
+      <div class="search_input">
+        <h2>Введите данные искомого студента</h2>
+        <label for="">ФИО</label>
+        <input class="search_name form-control" type="text">
+        <label for="">Факультет</label>
+        <input class="search_faculty form-control" type="text">
+        <label for="">Год начала обучения(точное совпадения)</label>
+        <input class="search_ageStart form-control" type="text">
+        <label for="">Год окончания обучения(точное совпадение)</label>
+        <input class="search_ageEnd form-control" type="text">
+      </div>
+    </div>
+  </div>
+  <script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+      'use strict';
+      window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+          form.addEventListener('submit', function (event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+  </script>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col" class="number_filter filter">#</th>
+        <th scope="col" class="fullname_filter filter">ФИО Студента</th>
+        <th scope="col" class="faculty_filter filter">Факультет</th>
+        <th scope="col" class="birthday_filter filter">Дата рождения и возраст</th>
+        <th scope="col" class="training_filter filter">Годы обучения и курс</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</body>
+
+</html>
